@@ -24,7 +24,8 @@ def logfile_path(jsonfmt=False, debug=False):
     if debug or os.getenv('DEBUGLOG', 'false').lower() == 'true':
         _debug = "_debug"
 
-    return os.path.join(PROMBENCH_CONF_DIR, "logging%s%s.conf" % (_debug, _json))
+    return os.path.join(PROMBENCH_CONF_DIR, "logging%s%s.conf" % (_debug,
+                                                                  _json))
 
 
 def getenv(name, default=None, convert=str):
@@ -57,8 +58,8 @@ APP_ENVIRON = getenv("APP_ENV", "development")
 PROMBENCH_API = getenv("PROMBENCH_API", "https://prombench.example.com")
 PROMBENCH_SOURCE_DIR = os.path.dirname(os.path.abspath(__file__))
 PROMBENCH_ROOT_DIR = os.path.abspath(os.path.join(PROMBENCH_SOURCE_DIR, "../"))
-PROMBENCH_CONF_DIR = os.getenv("PROMBENCH_CONF_DIR", os.path.join(
-    PROMBENCH_ROOT_DIR, "conf/"))
+PROMBENCH_CONF_DIR = os.getenv("PROMBENCH_CONF_DIR",
+                               os.path.join(PROMBENCH_ROOT_DIR, "conf/"))
 PROMBENCH_CONF_FILE = os.getenv("PROMBENCH_CONF_FILE", None)
 
 
@@ -97,7 +98,8 @@ class PrombenchConfig(object):
             instance = self
             instance.load_conffile(confpath)
         else:
-            instance = PrombenchConfig(defaults=self.settings, confpath=confpath)
+            instance = PrombenchConfig(defaults=self.settings,
+                                       confpath=confpath)
 
         return instance
 

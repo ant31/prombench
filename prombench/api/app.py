@@ -31,8 +31,7 @@ def create_app():
     # app.logger.addHandler(logging.StreamHandler(sys.stdout))
     # app.logger.setLevel(logging.INFO)
     if GCONFIG.prombench['env'] != 'production':
-        ffapp.app.config.from_object(
-            'prombench.api.config.DevelopmentConfig')
+        ffapp.app.config.from_object('prombench.api.config.DevelopmentConfig')
     else:
         ffapp.app.config.from_object('prombench.api.config.ProductionConfig')
 

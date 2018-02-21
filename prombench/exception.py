@@ -8,9 +8,11 @@ class PrombenchException(Exception):
         self.message = message
 
     def to_dict(self):
-        return {"code": self.errorcode,
-                "message": self.message,
-                "details": self.payload}
+        return {
+            "code": self.errorcode,
+            "message": self.message,
+            "details": self.payload
+        }
 
     def __str__(self):
         return self.message
