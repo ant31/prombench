@@ -36,26 +36,26 @@ test_requirements = [
 ]
 
 setup(
-    name='prombench',
+    name='promsnaps',
     version='0.0.1',
-    description="prombench",
+    description="promsnaps",
     long_description=readme,
     author="Antoine Legrand",
     author_email='2t.antoine@gmail.com',
-    url='https://github.com/ant31/prombench',
+    url='https://github.com/ant31/promsnaps',
     packages=[
-        'prombench',
-        'prombench.api',
-        'prombench.api.handlers',
-        'prombench.jobs',
+        'promsnaps',
+        'promsnaps.api',
+        'promsnaps.api.handlers',
+        'promsnaps.jobs',
     ],
-    package_dir={'prombench':
-                 'prombench'},
+    package_dir={'promsnaps':
+                 'promsnaps'},
     include_package_data=True,
     install_requires=requirements + celery_requirements,
     license="Apache License version 2",
     zip_safe=False,
-    keywords=['prombench'],
+    keywords=['promsnaps'],
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',

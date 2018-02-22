@@ -16,13 +16,13 @@ local jobs = {
   // All the CI jobs
 
 
-  'container-release': baseJobs.dockerBuild(images.release.prombench) + utils.gitlabCi.onlyMaster {
+  'container-release': baseJobs.dockerBuild(images.release.promsnaps) + utils.gitlabCi.onlyMaster {
     stage: stages.docker_release,
-    script: docker.rename(images.ci.prombench.name, images.release.prombench.name) +
-            docker.rename(images.ci.prombench.name, images.release.prombench.get_name('alpha')),
+    script: docker.rename(images.ci.promsnaps.name, images.release.promsnaps.name) +
+            docker.rename(images.ci.promsnaps.name, images.release.promsnaps.get_name('alpha')),
   },
 
-  'build-image': baseJobs.dockerBuild(images.ci.prombench) +
+  'build-image': baseJobs.dockerBuild(images.ci.promsnaps) +
                  {
                    stage: stages.build_image,
                  },

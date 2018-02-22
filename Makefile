@@ -11,7 +11,7 @@ endef
 export BROWSER_PYSCRIPT
 BROWSER := python -c "$$BROWSER_PYSCRIPT"
 VERSION := `cat VERSION`
-project := "prombench"
+project := "promsnaps"
 
 help:
 	@echo "clean - remove all build, test, coverage and Python artifacts"
@@ -105,14 +105,14 @@ coveralls: test
 	coveralls
 
 dockerfile: clean
-	docker build -t quay.io/ant31/prombench:v$(VERSION) .
+	docker build -t quay.io/ant31/promsnaps:v$(VERSION) .
 
 dockerfile-canary: clean
-	docker build -t quay.io/ant31/prombench:canary .
-	docker push quay.io/ant31/prombench
+	docker build -t quay.io/ant31/promsnaps:canary .
+	docker push quay.io/ant31/promsnaps
 
 dockerfile-push: dockerfile
-	docker push quay.io/ant31/prombench:v$(VERSION)
+	docker push quay.io/ant31/promsnaps:v$(VERSION)
 
 mypy:
 	mypy $(project) --ignore-missing-imports

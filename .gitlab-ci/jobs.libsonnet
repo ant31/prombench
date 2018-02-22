@@ -26,8 +26,8 @@ local vars = import "vars.libsonnet";
       GIT_STRATEGY: "none",
     },
     before_script: [
-      "cd /opt/prombench",
+      "cd /opt/promsnaps",
     ],
-    image: vars.images.ci.prombench.name,
+    image: vars.images.ci.promsnaps.name,
   } + job_tags,
 }

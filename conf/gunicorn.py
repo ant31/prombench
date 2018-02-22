@@ -1,6 +1,6 @@
 import sys
 import os
-from prombench.config import logfile_path
+from promsnaps.config import logfile_path
 
 
 

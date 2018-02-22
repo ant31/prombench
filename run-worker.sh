@@ -4,4 +4,4 @@ CELERY_BROKER_URL=${CELERY_BROKER_URL:-redis://}
 CELERY_BACKEND_URL=${CELERY_BACKEND_URL:-redis://}
 
 CELERY_BROKER_URL=$CELERY_BROKER \
-                 celery -A prombench.jobs.runner worker -l debug
+                 celery -A promsnaps.jobs.runner worker -l debug

@@ -1,6 +1,6 @@
 FROM python:3.6.2-alpine
 
-ENV workdir=/opt/prombench
+ENV workdir=/opt/promsnaps
 RUN apk --no-cache --update add openssl ca-certificates
 RUN apk --no-cache add --virtual build-dependencies \
     libffi-dev build-base openssl-dev bash git

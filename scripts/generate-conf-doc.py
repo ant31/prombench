@@ -1,5 +1,5 @@
 import yaml
-from prombench.config import GCONFIG
+from promsnaps.config import GCONFIG
 
 
 print(yaml.safe_dump(GCONFIG.settings, indent=2))
